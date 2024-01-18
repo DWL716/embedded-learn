@@ -1,6 +1,13 @@
 #include "Timer.h"
 
 // 72MHZ = 72000000
+/** 步骤
+ * 1. 时钟开启
+ * 2. 初始化定时器时基单元
+ * 3. 初始化中断
+ * 4. 开启定时器
+ * 5. 开启中断
+ */
 void TimerInit(void)
 {
     TIM_TimeBaseInitTypeDef TIM_TimeBaseInitStructure;
@@ -12,7 +19,7 @@ void TimerInit(void)
     TIM_TimeBaseInitStructure.TIM_Period = 7200 - 1; // arr
     TIM_TimeBaseInitStructure.TIM_CounterMode = TIM_CounterMode_Up;
     TIM_TimeBaseInitStructure.TIM_ClockDivision = TIM_CKD_DIV1; // 不分频
-    TIM_TimeBaseInitStructure.TIM_RepetitionCounter = 0x00;     // 滤波采样次数
+    TIM_TimeBaseInitStructure.TIM_RepetitionCounter = 0x00;     // 重复计算器
     TIM_TimeBaseInitStructure.TIM_Prescaler = 10000 - 1;        // psc
     TIM_TimeBaseInit(TIM2, &TIM_TimeBaseInitStructure);
 
