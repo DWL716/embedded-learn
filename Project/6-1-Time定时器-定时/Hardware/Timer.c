@@ -33,7 +33,7 @@ void TimerInit(void)
     TIM_Cmd(TIM2, ENABLE);
 }
 
-void NVIC_Init(void)
+void My_NVIC_Init(void)
 {
     NVIC_InitTypeDef NVIC_InitStruct;
     NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);

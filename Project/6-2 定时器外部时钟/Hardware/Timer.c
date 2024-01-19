@@ -44,7 +44,7 @@ void GPIO_Init(void)
     GPIO_Init(GPIOA, &GPIO_InitStructure);
 }
 // 初始化NVIC
-void NVIC_Init(void)
+void My_NVIC_Init(void)
 {
     NVIC_InitTypeDef NVIC_InitStructure;
 
